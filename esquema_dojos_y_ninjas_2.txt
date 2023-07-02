@@ -1,0 +1,61 @@
+1.-
+INSERT INTO `esquema_ninjas_y_dojos_2`.`Dojos` (`dojo_id`, `nombre`, `created_at`, `update_at`)
+VALUES 
+    (2, 'Dojo 1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (3, 'Dojo 2', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (4, 'Dojo 3', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+2.-
+DELETE FROM `esquema_ninjas_y_dojos_2`.`Dojos`
+WHERE `dojo_id` IN (2, 3, 4);
+
+3.-
+INSERT INTO `esquema_ninjas_y_dojos_2`.`Dojos` (`dojo_id`, `nombre`, `created_at`, `update_at`)
+VALUES 
+    (2, 'Dojo 1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (3, 'Dojo 2', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (4, 'Dojo 3', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+4.-
+INSERT INTO `Ninjas` (`first_name`, `last_namel`, `age`, `created_at`, `updated_at`, `Dojos_dojo_id`) 
+VALUES ('Ninja1', 'Apellido1', '25', NOW(), NOW(), 2);
+
+INSERT INTO `Ninjas` (`first_name`, `last_namel`, `age`, `created_at`, `updated_at`, `Dojos_dojo_id`) 
+VALUES ('Ninja2', 'Apellido2', '28', NOW(), NOW(), 2);
+
+INSERT INTO `Ninjas` (`first_name`, `last_namel`, `age`, `created_at`, `updated_at`, `Dojos_dojo_id`) 
+VALUES ('Ninja3', 'Apellido3', '30', NOW(), NOW(), 2);
+
+5.-
+INSERT INTO `Ninjas` (`first_name`, `last_namel`, `age`, `created_at`, `updated_at`, `Dojos_dojo_id`) 
+VALUES ('Ninja4', 'Apellido1', '15', NOW(), NOW(), 3);
+
+INSERT INTO `Ninjas` (`first_name`, `last_namel`, `age`, `created_at`, `updated_at`, `Dojos_dojo_id`) 
+VALUES ('Ninja5', 'Apellido2', '18', NOW(), NOW(), 3);
+
+INSERT INTO `Ninjas` (`first_name`, `last_namel`, `age`, `created_at`, `updated_at`, `Dojos_dojo_id`) 
+VALUES ('Ninja6', 'Apellido3', '20', NOW(), NOW(), 3);
+
+6.-
+INSERT INTO `Ninjas` (`first_name`, `last_namel`, `age`, `created_at`, `updated_at`, `Dojos_dojo_id`) 
+VALUES ('Ninja7', 'Apellido1', '22', NOW(), NOW(), 4);
+
+INSERT INTO `Ninjas` (`first_name`, `last_namel`, `age`, `created_at`, `updated_at`, `Dojos_dojo_id`) 
+VALUES ('Ninja8', 'Apellido2', '24', NOW(), NOW(), 4);
+
+INSERT INTO `Ninjas` (`first_name`, `last_namel`, `age`, `created_at`, `updated_at`, `Dojos_dojo_id`) 
+
+VALUES ('Ninja9', 'Apellido3', '26', NOW(), NOW(), 4);
+7.-
+SELECT MIN(dojo_id) FROM dojos;
+SELECT * FROM ninjas WHERE Dojos_dojo_id = 2;
+
+8.-
+SELECT MAX(dojo_id) FROM dojos;
+SELECT * FROM ninjas WHERE Dojos_dojo_id = 4;
+
+9.-
+SELECT MAX(idNinjas) FROM ninjas;
+SELECT dojos.* 
+FROM dojos 
+INNER JOIN ninjas ON dojos.dojo_id = ninjas.Dojos_dojo_id 
+WHERE ninjas.idNInjas = 10;
+
